@@ -15,7 +15,7 @@ import java.util.Objects;
  */
 @ApiModel(description = "Entity Religion")
 @Entity
-@Table(name = "religion")
+@Table(name = "hcm_m_religion")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "religion")
 public class Religion implements Serializable {

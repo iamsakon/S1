@@ -15,7 +15,7 @@ import java.util.Objects;
  */
 @ApiModel(description = "Entity MilitaryStatus")
 @Entity
-@Table(name = "military_status")
+@Table(name = "hcm_m_military_status")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "militarystatus")
 public class MilitaryStatus implements Serializable {

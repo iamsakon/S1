@@ -15,7 +15,7 @@ import java.util.Objects;
  */
 @ApiModel(description = "Entity Gender")
 @Entity
-@Table(name = "gender")
+@Table(name = "hcm_m_gender")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "gender")
 public class Gender implements Serializable {

@@ -15,7 +15,7 @@ import java.util.Objects;
  */
 @ApiModel(description = "Entity Prefix")
 @Entity
-@Table(name = "prefix")
+@Table(name = "hcm_m_prefix")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "prefix")
 public class Prefix implements Serializable {

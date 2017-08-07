@@ -1,0 +1,85 @@
+
+/** 
+ * Entity Prefix
+ */
+entity Prefix {
+	code String maxlength (128) required 
+	name String maxlength (256)
+	description String maxlength (1024)
+	activeFlag Boolean required
+	tenantId Long
+	companyCode Long
+}
+
+/**
+ * Entity Gender
+ */
+entity Gender {
+	code String maxlength (128) required 
+	name String maxlength (256)
+	description String maxlength (1024)
+	activeFlag Boolean required
+	tenantId Long
+	companyCode Long
+}
+
+/** 
+ * Entity Nationality
+ */
+entity Nationality{
+	code String maxlength (128) required
+	name String maxlength (256)
+	description String maxlength (1024)
+	activeFlag Boolean required
+	tenantId Long
+	companyCode Long
+}
+
+/** 
+ * Entity Race
+ */
+entity Race {
+	code String maxlength (128) required
+	name String maxlength (256)
+	description String maxlength (1024)
+	activeFlag Boolean required
+	tenantId Long
+	companyCode Long
+}
+
+/** 
+ * Entity Religion
+ */
+entity Religion {
+	code String maxlength (128) required
+	name String maxlength (256)
+	description String maxlength (1024)
+	activeFlag Boolean required
+	tenantId Long
+	companyCode Long
+}
+
+/**
+ * Entity MaritalStatus
+ */
+entity MaritalStatus{
+	code String maxlength (128) required
+	name String maxlength (256)
+	description String maxlength (1024)
+	activeFlag Boolean required
+	tenantId Long
+	companyCode Long
+}
+
+/**
+ * Entity MilitaryStatus
+ */
+entity MilitaryStatus{
+	code String maxlength (128) required
+	name String maxlength (256)
+	description String maxlength (1024)
+	activeFlag Boolean required
+	tenantId Long
+	companyCode Long
+}
+

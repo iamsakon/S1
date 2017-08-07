@@ -45,7 +45,7 @@
     ],
     "changelogDate": "20170807062327",
     "javadoc": "Entity MaritalStatus",
-    "entityTableName": "marital_status",
+    "entityTableName": "hcm_m_marital_status",
     "dto": "no",
     "pagination": "pagination",
     "service": "serviceClass"

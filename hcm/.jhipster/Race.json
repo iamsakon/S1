@@ -45,7 +45,7 @@
     ],
     "changelogDate": "20170807062325",
     "javadoc": "Entity Race",
-    "entityTableName": "race",
+    "entityTableName": "hcm_m_race",
     "dto": "no",
     "pagination": "pagination",
     "service": "serviceClass"

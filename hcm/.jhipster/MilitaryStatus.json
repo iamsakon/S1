@@ -45,7 +45,7 @@
     ],
     "changelogDate": "20170807062328",
     "javadoc": "Entity MilitaryStatus",
-    "entityTableName": "military_status",
+    "entityTableName": "hcm_m_military_status",
     "dto": "no",
     "pagination": "pagination",
     "service": "serviceClass"

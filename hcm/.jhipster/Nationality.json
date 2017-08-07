@@ -45,7 +45,7 @@
     ],
     "changelogDate": "20170807062324",
     "javadoc": "Entity Nationality",
-    "entityTableName": "nationality",
+    "entityTableName": "hcm_m_nationality",
     "dto": "no",
     "pagination": "pagination",
     "service": "serviceClass"

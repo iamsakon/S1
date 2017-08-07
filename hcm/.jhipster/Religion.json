@@ -45,7 +45,7 @@
     ],
     "changelogDate": "20170807062326",
     "javadoc": "Entity Religion",
-    "entityTableName": "religion",
+    "entityTableName": "hcm_m_religion",
     "dto": "no",
     "pagination": "pagination",
     "service": "serviceClass"

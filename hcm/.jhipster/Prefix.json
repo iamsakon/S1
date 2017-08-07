@@ -45,7 +45,7 @@
     ],
     "changelogDate": "20170807062322",
     "javadoc": "Entity Prefix",
-    "entityTableName": "prefix",
+    "entityTableName": "hcm_m_prefix",
     "dto": "no",
     "pagination": "pagination",
     "service": "serviceClass"

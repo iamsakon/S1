@@ -45,7 +45,7 @@
     ],
     "changelogDate": "20170807062323",
     "javadoc": "Entity Gender",
-    "entityTableName": "gender",
+    "entityTableName": "hcm_m_gender",
     "dto": "no",
     "pagination": "pagination",
     "service": "serviceClass"

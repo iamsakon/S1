@@ -83,3 +83,6 @@ entity MilitaryStatus{
 	companyCode Long
 }
 
+
+paginate * with pagination 
+service all with serviceClass

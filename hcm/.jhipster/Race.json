@@ -48,5 +48,6 @@
     "entityTableName": "hcm_m_race",
     "dto": "no",
     "pagination": "pagination",
+    "microserviceName": "hcm",
     "service": "serviceClass"
 }

@@ -17,7 +17,7 @@
         Added the entity Gender.
     -->
     <changeSet id="20170807062323-1" author="jhipster">
-        <createTable tableName="gender">
+        <createTable tableName="hcm_m_gender">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>

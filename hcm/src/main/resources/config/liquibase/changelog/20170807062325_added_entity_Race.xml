@@ -17,7 +17,7 @@
         Added the entity Race.
     -->
     <changeSet id="20170807062325-1" author="jhipster">
-        <createTable tableName="race">
+        <createTable tableName="hcm_m_race">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>

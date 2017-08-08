@@ -17,7 +17,7 @@
         Added the entity MaritalStatus.
     -->
     <changeSet id="20170807062327-1" author="jhipster">
-        <createTable tableName="marital_status">
+        <createTable tableName="hcm_m_marital_status">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>

@@ -17,7 +17,7 @@
         Added the entity MilitaryStatus.
     -->
     <changeSet id="20170807062328-1" author="jhipster">
-        <createTable tableName="military_status">
+        <createTable tableName="hcm_m_military_status">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>

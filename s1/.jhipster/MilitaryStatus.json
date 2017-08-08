@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": 128
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 256
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1024
+        },
+        {
+            "fieldName": "activeFlag",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tenantId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "companyCode",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170807062328",
+    "javadoc": "Entity MilitaryStatus",
+    "entityTableName": "hcm_m_military_status",
+    "dto": "no",
+    "pagination": "pagination",
+    "microserviceName": "hcm",
+    "service": "serviceClass"
+}

@@ -2,7 +2,8 @@
   "generator-jhipster": {
     "promptValues": {
       "packageName": "com.sky.s1",
-      "nativeLanguage": "en"
+      "nativeLanguage": "en",
+      "microservicePath": "../hcm"
     },
     "jhipsterVersion": "4.6.2",
     "baseName": "s1",

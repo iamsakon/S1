@@ -1,0 +1,31 @@
+{
+    "s1App": {
+        "militaryStatus" : {
+            "home": {
+                "title": "Military Statuses",
+                "createLabel": "สร้าง Military Status",
+                "createOrEditLabel": "สร้างหรือแก้ไข Military Status",
+                "search": "ค้นหา Military Status"
+            },
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Military Status {{ id }}?"
+            },
+            "detail": {
+                "title": "Military Status"
+            },
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code"
+        }
+    },
+    "hcmApp": {
+        "militaryStatus" : {
+            "created": "Military Status ถูกสร้างด้วย {{ param }}",
+            "updated": "Military Status ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Military Status ถูกลบด้วย {{ param }}"
+        }
+    }
+}

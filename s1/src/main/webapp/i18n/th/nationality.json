@@ -1,0 +1,31 @@
+{
+    "s1App": {
+        "nationality" : {
+            "home": {
+                "title": "Nationalities",
+                "createLabel": "สร้าง Nationality",
+                "createOrEditLabel": "สร้างหรือแก้ไข Nationality",
+                "search": "ค้นหา Nationality"
+            },
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Nationality {{ id }}?"
+            },
+            "detail": {
+                "title": "Nationality"
+            },
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code"
+        }
+    },
+    "hcmApp": {
+        "nationality" : {
+            "created": "Nationality ถูกสร้างด้วย {{ param }}",
+            "updated": "Nationality ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Nationality ถูกลบด้วย {{ param }}"
+        }
+    }
+}

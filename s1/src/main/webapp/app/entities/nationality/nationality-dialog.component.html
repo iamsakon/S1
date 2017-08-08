@@ -1,0 +1,83 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myNationalityLabel" jhiTranslate="s1App.nationality.home.createOrEditLabel">Create or edit a Nationality</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!nationality.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="nationality.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.nationality.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                [(ngModel)]="nationality.code" required maxlength="128" />
+            <div [hidden]="!(editForm.controls.code?.dirty && editForm.controls.code?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.code?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.code?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 128 }">
+                   This field cannot be longer than 128 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.nationality.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="nationality.name" maxlength="256" />
+            <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.name?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 256 }">
+                   This field cannot be longer than 256 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.nationality.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                [(ngModel)]="nationality.description" maxlength="1024" />
+            <div [hidden]="!(editForm.controls.description?.dirty && editForm.controls.description?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.description?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1024 }">
+                   This field cannot be longer than 1024 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.nationality.activeFlag" for="field_activeFlag">Active Flag</label>
+            <input type="checkbox" class="form-control" name="activeFlag" id="field_activeFlag"
+                [(ngModel)]="nationality.activeFlag"  />
+            <div [hidden]="!(editForm.controls.activeFlag?.dirty && editForm.controls.activeFlag?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.activeFlag?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.nationality.tenantId" for="field_tenantId">Tenant Id</label>
+            <input type="number" class="form-control" name="tenantId" id="field_tenantId"
+                [(ngModel)]="nationality.tenantId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.nationality.companyCode" for="field_companyCode">Company Code</label>
+            <input type="number" class="form-control" name="companyCode" id="field_companyCode"
+                [(ngModel)]="nationality.companyCode"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

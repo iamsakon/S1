@@ -1,0 +1,31 @@
+{
+    "s1App": {
+        "militaryStatus" : {
+            "home": {
+                "title": "Military Statuses",
+                "createLabel": "Create a new Military Status",
+                "createOrEditLabel": "Create or edit a Military Status",
+                "search": "Search for Military Status"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Military Status {{ id }}?"
+            },
+            "detail": {
+                "title": "Military Status"
+            },
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code"
+        }
+    },
+    "hcmApp": {
+        "militaryStatus" : {
+            "created": "A new Military Status is created with identifier {{ param }}",
+            "updated": "A Military Status is updated with identifier {{ param }}",
+            "deleted": "A Military Status is deleted with identifier {{ param }}"
+        }
+    }
+}

@@ -1,0 +1,45 @@
+
+<div *ngIf="religion">
+    <h2><span jhiTranslate="s1App.religion.detail.title">Religion</span> {{religion.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="s1App.religion.code">Code</span></dt>
+        <dd>
+            <span>{{religion.code}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.religion.name">Name</span></dt>
+        <dd>
+            <span>{{religion.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.religion.description">Description</span></dt>
+        <dd>
+            <span>{{religion.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.religion.activeFlag">Active Flag</span></dt>
+        <dd>
+            <span>{{religion.activeFlag}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.religion.tenantId">Tenant Id</span></dt>
+        <dd>
+            <span>{{religion.tenantId}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.religion.companyCode">Company Code</span></dt>
+        <dd>
+            <span>{{religion.companyCode}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'religion/'+ religion.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

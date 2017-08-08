@@ -1,0 +1,31 @@
+{
+    "s1App": {
+        "prefix" : {
+            "home": {
+                "title": "Prefixes",
+                "createLabel": "Create a new Prefix",
+                "createOrEditLabel": "Create or edit a Prefix",
+                "search": "Search for Prefix"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Prefix {{ id }}?"
+            },
+            "detail": {
+                "title": "Prefix"
+            },
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code"
+        }
+    },
+    "hcmApp": {
+        "prefix" : {
+            "created": "A new Prefix is created with identifier {{ param }}",
+            "updated": "A Prefix is updated with identifier {{ param }}",
+            "deleted": "A Prefix is deleted with identifier {{ param }}"
+        }
+    }
+}

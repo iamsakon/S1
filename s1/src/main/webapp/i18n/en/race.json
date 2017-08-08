@@ -1,0 +1,31 @@
+{
+    "s1App": {
+        "race" : {
+            "home": {
+                "title": "Races",
+                "createLabel": "Create a new Race",
+                "createOrEditLabel": "Create or edit a Race",
+                "search": "Search for Race"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Race {{ id }}?"
+            },
+            "detail": {
+                "title": "Race"
+            },
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code"
+        }
+    },
+    "hcmApp": {
+        "race" : {
+            "created": "A new Race is created with identifier {{ param }}",
+            "updated": "A Race is updated with identifier {{ param }}",
+            "deleted": "A Race is deleted with identifier {{ param }}"
+        }
+    }
+}

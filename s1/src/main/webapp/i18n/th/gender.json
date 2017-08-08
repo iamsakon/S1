@@ -1,0 +1,31 @@
+{
+    "s1App": {
+        "gender" : {
+            "home": {
+                "title": "Genders",
+                "createLabel": "สร้าง Gender",
+                "createOrEditLabel": "สร้างหรือแก้ไข Gender",
+                "search": "ค้นหา Gender"
+            },
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Gender {{ id }}?"
+            },
+            "detail": {
+                "title": "Gender"
+            },
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code"
+        }
+    },
+    "hcmApp": {
+        "gender" : {
+            "created": "Gender ถูกสร้างด้วย {{ param }}",
+            "updated": "Gender ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Gender ถูกลบด้วย {{ param }}"
+        }
+    }
+}

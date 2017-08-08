@@ -1,0 +1,31 @@
+{
+    "s1App": {
+        "prefix" : {
+            "home": {
+                "title": "Prefixes",
+                "createLabel": "สร้าง Prefix",
+                "createOrEditLabel": "สร้างหรือแก้ไข Prefix",
+                "search": "ค้นหา Prefix"
+            },
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Prefix {{ id }}?"
+            },
+            "detail": {
+                "title": "Prefix"
+            },
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code"
+        }
+    },
+    "hcmApp": {
+        "prefix" : {
+            "created": "Prefix ถูกสร้างด้วย {{ param }}",
+            "updated": "Prefix ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Prefix ถูกลบด้วย {{ param }}"
+        }
+    }
+}

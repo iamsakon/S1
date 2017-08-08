@@ -1,0 +1,31 @@
+{
+    "s1App": {
+        "religion" : {
+            "home": {
+                "title": "Religions",
+                "createLabel": "สร้าง Religion",
+                "createOrEditLabel": "สร้างหรือแก้ไข Religion",
+                "search": "ค้นหา Religion"
+            },
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Religion {{ id }}?"
+            },
+            "detail": {
+                "title": "Religion"
+            },
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code"
+        }
+    },
+    "hcmApp": {
+        "religion" : {
+            "created": "Religion ถูกสร้างด้วย {{ param }}",
+            "updated": "Religion ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Religion ถูกลบด้วย {{ param }}"
+        }
+    }
+}

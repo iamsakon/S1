@@ -1,0 +1,31 @@
+{
+    "s1App": {
+        "race" : {
+            "home": {
+                "title": "Races",
+                "createLabel": "สร้าง Race",
+                "createOrEditLabel": "สร้างหรือแก้ไข Race",
+                "search": "ค้นหา Race"
+            },
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Race {{ id }}?"
+            },
+            "detail": {
+                "title": "Race"
+            },
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code"
+        }
+    },
+    "hcmApp": {
+        "race" : {
+            "created": "Race ถูกสร้างด้วย {{ param }}",
+            "updated": "Race ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Race ถูกลบด้วย {{ param }}"
+        }
+    }
+}

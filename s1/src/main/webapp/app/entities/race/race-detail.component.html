@@ -1,0 +1,45 @@
+
+<div *ngIf="race">
+    <h2><span jhiTranslate="s1App.race.detail.title">Race</span> {{race.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="s1App.race.code">Code</span></dt>
+        <dd>
+            <span>{{race.code}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.race.name">Name</span></dt>
+        <dd>
+            <span>{{race.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.race.description">Description</span></dt>
+        <dd>
+            <span>{{race.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.race.activeFlag">Active Flag</span></dt>
+        <dd>
+            <span>{{race.activeFlag}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.race.tenantId">Tenant Id</span></dt>
+        <dd>
+            <span>{{race.tenantId}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.race.companyCode">Company Code</span></dt>
+        <dd>
+            <span>{{race.companyCode}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'race/'+ race.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

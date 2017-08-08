@@ -1,0 +1,31 @@
+{
+    "s1App": {
+        "gender" : {
+            "home": {
+                "title": "Genders",
+                "createLabel": "Create a new Gender",
+                "createOrEditLabel": "Create or edit a Gender",
+                "search": "Search for Gender"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Gender {{ id }}?"
+            },
+            "detail": {
+                "title": "Gender"
+            },
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code"
+        }
+    },
+    "hcmApp": {
+        "gender" : {
+            "created": "A new Gender is created with identifier {{ param }}",
+            "updated": "A Gender is updated with identifier {{ param }}",
+            "deleted": "A Gender is deleted with identifier {{ param }}"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "s1App": {
+        "maritalStatus" : {
+            "home": {
+                "title": "Marital Statuses",
+                "createLabel": "สร้าง Marital Status",
+                "createOrEditLabel": "สร้างหรือแก้ไข Marital Status",
+                "search": "ค้นหา Marital Status"
+            },
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Marital Status {{ id }}?"
+            },
+            "detail": {
+                "title": "Marital Status"
+            },
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code"
+        }
+    },
+    "hcmApp": {
+        "maritalStatus" : {
+            "created": "Marital Status ถูกสร้างด้วย {{ param }}",
+            "updated": "Marital Status ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Marital Status ถูกลบด้วย {{ param }}"
+        }
+    }
+}

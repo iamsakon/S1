@@ -7,6 +7,7 @@ import { S1ReligionModule } from './religion/religion.module';
 import { S1GenderModule } from './gender/gender.module';
 import { S1MaritalStatusModule } from './marital-status/marital-status.module';
 import { S1MilitaryStatusModule } from './military-status/military-status.module';
+import { S1BloodTypeModule } from './blood-type/blood-type.module';
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
 @NgModule({
@@ -18,6 +19,7 @@ import { S1MilitaryStatusModule } from './military-status/military-status.module
         S1GenderModule,
         S1MaritalStatusModule,
         S1MilitaryStatusModule,
+        S1BloodTypeModule,
         /* jhipster-needle-add-entity-module - JHipster will add entity modules here */
     ],
     declarations: [],

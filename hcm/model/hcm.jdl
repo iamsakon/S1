@@ -83,6 +83,16 @@ entity MilitaryStatus{
 	companyCode Long
 }
 
+entity BloodType{
+	code String maxlength (128) required
+	name String maxlength (256)
+	description String maxlength (1024)
+	activeFlag Boolean required
+	tenantId Long
+	companyCode Long
+}
 
+microservice * with hcm
 paginate * with pagination 
 service all with serviceClass
+

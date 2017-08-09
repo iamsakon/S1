@@ -1,0 +1,31 @@
+{
+    "s1App": {
+        "bloodType" : {
+            "home": {
+                "title": "Blood Types",
+                "createLabel": "Create a new Blood Type",
+                "createOrEditLabel": "Create or edit a Blood Type",
+                "search": "Search for Blood Type"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Blood Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Blood Type"
+            },
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code"
+        }
+    },
+    "hcmApp": {
+        "bloodType" : {
+            "created": "A new Blood Type is created with identifier {{ param }}",
+            "updated": "A Blood Type is updated with identifier {{ param }}",
+            "deleted": "A Blood Type is deleted with identifier {{ param }}"
+        }
+    }
+}

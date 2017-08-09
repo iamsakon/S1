@@ -12,6 +12,7 @@
     <include file="config/liquibase/changelog/20170807062326_added_entity_Religion.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20170807062327_added_entity_MaritalStatus.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20170807062328_added_entity_MilitaryStatus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170808090014_added_entity_BloodType.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

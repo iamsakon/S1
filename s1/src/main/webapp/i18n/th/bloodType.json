@@ -1,0 +1,31 @@
+{
+    "s1App": {
+        "bloodType" : {
+            "home": {
+                "title": "Blood Types",
+                "createLabel": "สร้าง Blood Type",
+                "createOrEditLabel": "สร้างหรือแก้ไข Blood Type",
+                "search": "ค้นหา Blood Type"
+            },
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Blood Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Blood Type"
+            },
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code"
+        }
+    },
+    "hcmApp": {
+        "bloodType" : {
+            "created": "Blood Type ถูกสร้างด้วย {{ param }}",
+            "updated": "Blood Type ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Blood Type ถูกลบด้วย {{ param }}"
+        }
+    }
+}

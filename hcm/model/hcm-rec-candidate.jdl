@@ -1,0 +1,53 @@
+
+/** 
+ * Entity Prefix
+ */
+entity Candidate {
+	code String maxlength (128) required 
+	firstName String maxlength (256) required
+	middleName String maxlength (256)
+	lastName String maxlength (256)
+	birthDate Date
+	personalEmail String maxlength (256)
+	mobileNumber String maxlength (256)
+	phoneNumber String maxlength (256)
+	activeFlag Boolean required
+	tenantId Long
+	companyCode Long
+}
+
+relationship ManyToOne {
+  Candidate{prefix} to Prefix
+}
+
+relationship ManyToOne {
+  Candidate{gender} to Gender
+}
+
+relationship ManyToOne {
+  Candidate{bloodType} to BloodType
+}
+
+relationship ManyToOne {
+  Candidate{nationality} to Nationality
+}
+
+relationship ManyToOne {
+  Candidate{race} to Race
+}
+
+relationship ManyToOne {
+  Candidate{religion} to Religion
+}
+
+relationship ManyToOne {
+  Candidate{militaryStatus} to MilitaryStatus
+}
+
+relationship ManyToOne {
+  Candidate{maritalStatus} to MaritalStatus
+}
+
+microservice * with hcm
+paginate * with pagination 
+service all with serviceClass

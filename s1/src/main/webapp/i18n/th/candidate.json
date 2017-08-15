@@ -1,0 +1,44 @@
+{
+    "s1App": {
+        "candidate" : {
+            "home": {
+                "title": "Candidates",
+                "createLabel": "สร้าง Candidate",
+                "createOrEditLabel": "สร้างหรือแก้ไข Candidate",
+                "search": "ค้นหา Candidate"
+            },
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Candidate {{ id }}?"
+            },
+            "detail": {
+                "title": "Candidate"
+            },
+            "code": "Code",
+            "firstName": "First Name",
+            "middleName": "Middle Name",
+            "lastName": "Last Name",
+            "birthDate": "Birth Date",
+            "personalEmail": "Personal Email",
+            "mobileNumber": "Mobile Number",
+            "phoneNumber": "Phone Number",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code",
+            "prefix": "Prefix",
+            "gender": "Gender",
+            "bloodType": "Blood Type",
+            "nationality": "Nationality",
+            "race": "Race",
+            "religion": "Religion",
+            "militaryStatus": "Military Status",
+            "maritalStatus": "Marital Status"
+        }
+    },
+    "hcmApp": {
+        "candidate" : {
+            "created": "Candidate ถูกสร้างด้วย {{ param }}",
+            "updated": "Candidate ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Candidate ถูกลบด้วย {{ param }}"
+        }
+    }
+}

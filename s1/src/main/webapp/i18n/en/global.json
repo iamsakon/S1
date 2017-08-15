@@ -15,6 +15,7 @@
                 "maritalStatus": "Marital Status",
                 "militaryStatus": "Military Status",
                 "bloodType": "Blood Type",
+                "candidate": "Candidate",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

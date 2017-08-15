@@ -1,0 +1,197 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myCandidateLabel" jhiTranslate="s1App.candidate.home.createOrEditLabel">Create or edit a Candidate</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!candidate.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="candidate.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.candidate.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                [(ngModel)]="candidate.code" required maxlength="128" />
+            <div [hidden]="!(editForm.controls.code?.dirty && editForm.controls.code?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.code?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.code?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 128 }">
+                   This field cannot be longer than 128 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.candidate.firstName" for="field_firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                [(ngModel)]="candidate.firstName" required maxlength="256" />
+            <div [hidden]="!(editForm.controls.firstName?.dirty && editForm.controls.firstName?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.firstName?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.firstName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 256 }">
+                   This field cannot be longer than 256 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.candidate.middleName" for="field_middleName">Middle Name</label>
+            <input type="text" class="form-control" name="middleName" id="field_middleName"
+                [(ngModel)]="candidate.middleName" maxlength="256" />
+            <div [hidden]="!(editForm.controls.middleName?.dirty && editForm.controls.middleName?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.middleName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 256 }">
+                   This field cannot be longer than 256 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.candidate.lastName" for="field_lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                [(ngModel)]="candidate.lastName" maxlength="256" />
+            <div [hidden]="!(editForm.controls.lastName?.dirty && editForm.controls.lastName?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.lastName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 256 }">
+                   This field cannot be longer than 256 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.candidate.birthDate" for="field_birthDate">Birth Date</label>
+            <div class="input-group">
+                <input id="field_birthDate" type="text" class="form-control" name="birthDate" ngbDatepicker  #birthDateDp="ngbDatepicker" [(ngModel)]="candidate.birthDate"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="birthDateDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.candidate.personalEmail" for="field_personalEmail">Personal Email</label>
+            <input type="text" class="form-control" name="personalEmail" id="field_personalEmail"
+                [(ngModel)]="candidate.personalEmail" maxlength="256" />
+            <div [hidden]="!(editForm.controls.personalEmail?.dirty && editForm.controls.personalEmail?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.personalEmail?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 256 }">
+                   This field cannot be longer than 256 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.candidate.mobileNumber" for="field_mobileNumber">Mobile Number</label>
+            <input type="text" class="form-control" name="mobileNumber" id="field_mobileNumber"
+                [(ngModel)]="candidate.mobileNumber" maxlength="256" />
+            <div [hidden]="!(editForm.controls.mobileNumber?.dirty && editForm.controls.mobileNumber?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.mobileNumber?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 256 }">
+                   This field cannot be longer than 256 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.candidate.phoneNumber" for="field_phoneNumber">Phone Number</label>
+            <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                [(ngModel)]="candidate.phoneNumber" maxlength="256" />
+            <div [hidden]="!(editForm.controls.phoneNumber?.dirty && editForm.controls.phoneNumber?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.phoneNumber?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 256 }">
+                   This field cannot be longer than 256 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.candidate.activeFlag" for="field_activeFlag">Active Flag</label>
+            <input type="checkbox" class="form-control" name="activeFlag" id="field_activeFlag"
+                [(ngModel)]="candidate.activeFlag"  />
+            <div [hidden]="!(editForm.controls.activeFlag?.dirty && editForm.controls.activeFlag?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.activeFlag?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.candidate.tenantId" for="field_tenantId">Tenant Id</label>
+            <input type="number" class="form-control" name="tenantId" id="field_tenantId"
+                [(ngModel)]="candidate.tenantId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.candidate.companyCode" for="field_companyCode">Company Code</label>
+            <input type="number" class="form-control" name="companyCode" id="field_companyCode"
+                [(ngModel)]="candidate.companyCode"  />
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="s1App.candidate.prefix" for="field_prefix">Prefix</label>
+            <select class="form-control" id="field_prefix" name="prefix" [(ngModel)]="candidate.prefix" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prefixOption.id === candidate.prefix?.id ? candidate.prefix : prefixOption" *ngFor="let prefixOption of prefixes; trackBy: trackPrefixById">{{prefixOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.candidate.gender" for="field_gender">Gender</label>
+            <select class="form-control" id="field_gender" name="gender" [(ngModel)]="candidate.gender" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="genderOption.id === candidate.gender?.id ? candidate.gender : genderOption" *ngFor="let genderOption of genders; trackBy: trackGenderById">{{genderOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.candidate.bloodType" for="field_bloodType">Blood Type</label>
+            <select class="form-control" id="field_bloodType" name="bloodType" [(ngModel)]="candidate.bloodType" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="bloodTypeOption.id === candidate.bloodType?.id ? candidate.bloodType : bloodTypeOption" *ngFor="let bloodTypeOption of bloodtypes; trackBy: trackBloodTypeById">{{bloodTypeOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.candidate.nationality" for="field_nationality">Nationality</label>
+            <select class="form-control" id="field_nationality" name="nationality" [(ngModel)]="candidate.nationality" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="nationalityOption.id === candidate.nationality?.id ? candidate.nationality : nationalityOption" *ngFor="let nationalityOption of nationalities; trackBy: trackNationalityById">{{nationalityOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.candidate.race" for="field_race">Race</label>
+            <select class="form-control" id="field_race" name="race" [(ngModel)]="candidate.race" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="raceOption.id === candidate.race?.id ? candidate.race : raceOption" *ngFor="let raceOption of races; trackBy: trackRaceById">{{raceOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.candidate.religion" for="field_religion">Religion</label>
+            <select class="form-control" id="field_religion" name="religion" [(ngModel)]="candidate.religion" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="religionOption.id === candidate.religion?.id ? candidate.religion : religionOption" *ngFor="let religionOption of religions; trackBy: trackReligionById">{{religionOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.candidate.militaryStatus" for="field_militaryStatus">Military Status</label>
+            <select class="form-control" id="field_militaryStatus" name="militaryStatus" [(ngModel)]="candidate.militaryStatus" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="militaryStatusOption.id === candidate.militaryStatus?.id ? candidate.militaryStatus : militaryStatusOption" *ngFor="let militaryStatusOption of militarystatuses; trackBy: trackMilitaryStatusById">{{militaryStatusOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.candidate.maritalStatus" for="field_maritalStatus">Marital Status</label>
+            <select class="form-control" id="field_maritalStatus" name="maritalStatus" [(ngModel)]="candidate.maritalStatus" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="maritalStatusOption.id === candidate.maritalStatus?.id ? candidate.maritalStatus : maritalStatusOption" *ngFor="let maritalStatusOption of maritalstatuses; trackBy: trackMaritalStatusById">{{maritalStatusOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

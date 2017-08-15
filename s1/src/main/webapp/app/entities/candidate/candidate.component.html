@@ -1,0 +1,145 @@
+<div>
+    <h2>
+        <span jhiTranslate="s1App.candidate.home.title">Candidates</span>
+        <button class="btn btn-primary float-right jh-create-entity create-candidate" [routerLink]="['/', { outlets: { popup: ['candidate-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="s1App.candidate.home.createLabel">
+            Create new Candidate
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 's1App.candidate.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="candidates">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="code"><span jhiTranslate="s1App.candidate.code">Code</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="firstName"><span jhiTranslate="s1App.candidate.firstName">First Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="middleName"><span jhiTranslate="s1App.candidate.middleName">Middle Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="lastName"><span jhiTranslate="s1App.candidate.lastName">Last Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="birthDate"><span jhiTranslate="s1App.candidate.birthDate">Birth Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="personalEmail"><span jhiTranslate="s1App.candidate.personalEmail">Personal Email</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="mobileNumber"><span jhiTranslate="s1App.candidate.mobileNumber">Mobile Number</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="phoneNumber"><span jhiTranslate="s1App.candidate.phoneNumber">Phone Number</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="activeFlag"><span jhiTranslate="s1App.candidate.activeFlag">Active Flag</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tenantId"><span jhiTranslate="s1App.candidate.tenantId">Tenant Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="companyCode"><span jhiTranslate="s1App.candidate.companyCode">Company Code</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="prefix.id"><span jhiTranslate="s1App.candidate.prefix">Prefix</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="gender.id"><span jhiTranslate="s1App.candidate.gender">Gender</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="bloodType.id"><span jhiTranslate="s1App.candidate.bloodType">Blood Type</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nationality.id"><span jhiTranslate="s1App.candidate.nationality">Nationality</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="race.id"><span jhiTranslate="s1App.candidate.race">Race</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="religion.id"><span jhiTranslate="s1App.candidate.religion">Religion</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="militaryStatus.id"><span jhiTranslate="s1App.candidate.militaryStatus">Military Status</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="maritalStatus.id"><span jhiTranslate="s1App.candidate.maritalStatus">Marital Status</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let candidate of candidates ;trackBy: trackId">
+                <td><a [routerLink]="['../candidate', candidate.id ]">{{candidate.id}}</a></td>
+                <td>{{candidate.code}}</td>
+                <td>{{candidate.firstName}}</td>
+                <td>{{candidate.middleName}}</td>
+                <td>{{candidate.lastName}}</td>
+                <td>{{candidate.birthDate | date:'mediumDate'}}</td>
+                <td>{{candidate.personalEmail}}</td>
+                <td>{{candidate.mobileNumber}}</td>
+                <td>{{candidate.phoneNumber}}</td>
+                <td>{{candidate.activeFlag}}</td>
+                <td>{{candidate.tenantId}}</td>
+                <td>{{candidate.companyCode}}</td>
+                <td>
+                    <div *ngIf="candidate.prefix">
+                        <a [routerLink]="['../prefix', candidate.prefix?.id ]" >{{candidate.prefix?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="candidate.gender">
+                        <a [routerLink]="['../gender', candidate.gender?.id ]" >{{candidate.gender?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="candidate.bloodType">
+                        <a [routerLink]="['../blood-type', candidate.bloodType?.id ]" >{{candidate.bloodType?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="candidate.nationality">
+                        <a [routerLink]="['../nationality', candidate.nationality?.id ]" >{{candidate.nationality?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="candidate.race">
+                        <a [routerLink]="['../race', candidate.race?.id ]" >{{candidate.race?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="candidate.religion">
+                        <a [routerLink]="['../religion', candidate.religion?.id ]" >{{candidate.religion?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="candidate.militaryStatus">
+                        <a [routerLink]="['../military-status', candidate.militaryStatus?.id ]" >{{candidate.militaryStatus?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="candidate.maritalStatus">
+                        <a [routerLink]="['../marital-status', candidate.maritalStatus?.id ]" >{{candidate.maritalStatus?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../candidate', candidate.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'candidate/'+ candidate.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'candidate/'+ candidate.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <div *ngIf="candidates && candidates.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

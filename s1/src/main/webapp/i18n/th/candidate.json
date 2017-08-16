@@ -2,43 +2,43 @@
     "s1App": {
         "candidate" : {
             "home": {
-                "title": "Candidates",
-                "createLabel": "สร้าง Candidate",
-                "createOrEditLabel": "สร้างหรือแก้ไข Candidate",
-                "search": "ค้นหา Candidate"
+                "title": "ผู้สมัคร",
+                "createLabel": "เพิ่มผู้สมัคร",
+                "createOrEditLabel": "สร้างหรือแก้ไขข้อมูล ผู้สมัคร",
+                "search": "ค้นหาผู้สมัคร"
             },
             "delete": {
-                "question": "คุณต้องการที่จะลบ Candidate {{ id }}?"
+                "question": "ต้องการลบข้อมูลผู้สมัคร {{ id }} ใช่หรือไม่ ?"
             },
             "detail": {
-                "title": "Candidate"
+                "title": "ผู้สมัคร"
             },
-            "code": "Code",
-            "firstName": "First Name",
-            "middleName": "Middle Name",
-            "lastName": "Last Name",
-            "birthDate": "Birth Date",
-            "personalEmail": "Personal Email",
-            "mobileNumber": "Mobile Number",
-            "phoneNumber": "Phone Number",
-            "activeFlag": "Active Flag",
+            "code": "รหัส",
+            "firstName": "ชื่อ",
+            "middleName": "ชื่อกลาง",
+            "lastName": "นามสกุล",
+            "birthDate": "วันเกิด",
+            "personalEmail": "อีเมลล์",
+            "mobileNumber": "หมายเลขโทรศัพท์มือถือ",
+            "phoneNumber": "หมายเลขโทรศัพท์",
+            "activeFlag": "การใช้งานข้อมูล",
             "tenantId": "Tenant Id",
             "companyCode": "Company Code",
-            "prefix": "Prefix",
-            "gender": "Gender",
-            "bloodType": "Blood Type",
-            "nationality": "Nationality",
-            "race": "Race",
-            "religion": "Religion",
-            "militaryStatus": "Military Status",
-            "maritalStatus": "Marital Status"
+            "prefix": "คำนำหน้าชื่อ",
+            "gender": "เพศ",
+            "bloodType": "หมู่โลหิต",
+            "nationality": "สัญชาติ",
+            "race": "เชื้อชาติ",
+            "religion": "ศาสนา",
+            "militaryStatus": "สถานภาพทางทหาร",
+            "maritalStatus": "สถานภาพการสมรส"
         }
     },
     "hcmApp": {
         "candidate" : {
-            "created": "Candidate ถูกสร้างด้วย {{ param }}",
-            "updated": "Candidate ถูกแก้ไขด้วย {{ param }}",
-            "deleted": "Candidate ถูกลบด้วย {{ param }}"
+            "created": "A new Candidate is created with identifier {{ param }}",
+            "updated": "A Candidate is updated with identifier {{ param }}",
+            "deleted": "A Candidate is deleted with identifier {{ param }}"
         }
     }
 }

@@ -133,56 +133,56 @@
             <label jhiTranslate="s1App.candidate.prefix" for="field_prefix">Prefix</label>
             <select class="form-control" id="field_prefix" name="prefix" [(ngModel)]="candidate.prefix" >
                 <option [ngValue]="null"></option>
-                <option [ngValue]="prefixOption.id === candidate.prefix?.id ? candidate.prefix : prefixOption" *ngFor="let prefixOption of prefixes; trackBy: trackPrefixById">{{prefixOption.id}}</option>
+                <option [ngValue]="prefixOption.id === candidate.prefix?.id ? candidate.prefix : prefixOption" *ngFor="let prefixOption of prefixes; trackBy: trackPrefixById">{{prefixOption.name}}</option>
             </select>
         </div>
         <div class="form-group">
             <label jhiTranslate="s1App.candidate.gender" for="field_gender">Gender</label>
             <select class="form-control" id="field_gender" name="gender" [(ngModel)]="candidate.gender" >
                 <option [ngValue]="null"></option>
-                <option [ngValue]="genderOption.id === candidate.gender?.id ? candidate.gender : genderOption" *ngFor="let genderOption of genders; trackBy: trackGenderById">{{genderOption.id}}</option>
+                <option [ngValue]="genderOption.id === candidate.gender?.id ? candidate.gender : genderOption" *ngFor="let genderOption of genders; trackBy: trackGenderById">{{genderOption.name}}</option>
             </select>
         </div>
         <div class="form-group">
             <label jhiTranslate="s1App.candidate.bloodType" for="field_bloodType">Blood Type</label>
             <select class="form-control" id="field_bloodType" name="bloodType" [(ngModel)]="candidate.bloodType" >
                 <option [ngValue]="null"></option>
-                <option [ngValue]="bloodTypeOption.id === candidate.bloodType?.id ? candidate.bloodType : bloodTypeOption" *ngFor="let bloodTypeOption of bloodtypes; trackBy: trackBloodTypeById">{{bloodTypeOption.id}}</option>
+                <option [ngValue]="bloodTypeOption.id === candidate.bloodType?.id ? candidate.bloodType : bloodTypeOption" *ngFor="let bloodTypeOption of bloodtypes; trackBy: trackBloodTypeById">{{bloodTypeOption.name}}</option>
             </select>
         </div>
         <div class="form-group">
             <label jhiTranslate="s1App.candidate.nationality" for="field_nationality">Nationality</label>
             <select class="form-control" id="field_nationality" name="nationality" [(ngModel)]="candidate.nationality" >
                 <option [ngValue]="null"></option>
-                <option [ngValue]="nationalityOption.id === candidate.nationality?.id ? candidate.nationality : nationalityOption" *ngFor="let nationalityOption of nationalities; trackBy: trackNationalityById">{{nationalityOption.id}}</option>
+                <option [ngValue]="nationalityOption.id === candidate.nationality?.id ? candidate.nationality : nationalityOption" *ngFor="let nationalityOption of nationalities; trackBy: trackNationalityById">{{nationalityOption.name}}</option>
             </select>
         </div>
         <div class="form-group">
             <label jhiTranslate="s1App.candidate.race" for="field_race">Race</label>
             <select class="form-control" id="field_race" name="race" [(ngModel)]="candidate.race" >
                 <option [ngValue]="null"></option>
-                <option [ngValue]="raceOption.id === candidate.race?.id ? candidate.race : raceOption" *ngFor="let raceOption of races; trackBy: trackRaceById">{{raceOption.id}}</option>
+                <option [ngValue]="raceOption.id === candidate.race?.id ? candidate.race : raceOption" *ngFor="let raceOption of races; trackBy: trackRaceById">{{raceOption.name}}</option>
             </select>
         </div>
         <div class="form-group">
             <label jhiTranslate="s1App.candidate.religion" for="field_religion">Religion</label>
             <select class="form-control" id="field_religion" name="religion" [(ngModel)]="candidate.religion" >
                 <option [ngValue]="null"></option>
-                <option [ngValue]="religionOption.id === candidate.religion?.id ? candidate.religion : religionOption" *ngFor="let religionOption of religions; trackBy: trackReligionById">{{religionOption.id}}</option>
+                <option [ngValue]="religionOption.id === candidate.religion?.id ? candidate.religion : religionOption" *ngFor="let religionOption of religions; trackBy: trackReligionById">{{religionOption.name}}</option>
             </select>
         </div>
         <div class="form-group">
             <label jhiTranslate="s1App.candidate.militaryStatus" for="field_militaryStatus">Military Status</label>
             <select class="form-control" id="field_militaryStatus" name="militaryStatus" [(ngModel)]="candidate.militaryStatus" >
                 <option [ngValue]="null"></option>
-                <option [ngValue]="militaryStatusOption.id === candidate.militaryStatus?.id ? candidate.militaryStatus : militaryStatusOption" *ngFor="let militaryStatusOption of militarystatuses; trackBy: trackMilitaryStatusById">{{militaryStatusOption.id}}</option>
+                <option [ngValue]="militaryStatusOption.id === candidate.militaryStatus?.id ? candidate.militaryStatus : militaryStatusOption" *ngFor="let militaryStatusOption of militarystatuses; trackBy: trackMilitaryStatusById">{{militaryStatusOption.name}}</option>
             </select>
         </div>
         <div class="form-group">
             <label jhiTranslate="s1App.candidate.maritalStatus" for="field_maritalStatus">Marital Status</label>
             <select class="form-control" id="field_maritalStatus" name="maritalStatus" [(ngModel)]="candidate.maritalStatus" >
                 <option [ngValue]="null"></option>
-                <option [ngValue]="maritalStatusOption.id === candidate.maritalStatus?.id ? candidate.maritalStatus : maritalStatusOption" *ngFor="let maritalStatusOption of maritalstatuses; trackBy: trackMaritalStatusById">{{maritalStatusOption.id}}</option>
+                <option [ngValue]="maritalStatusOption.id === candidate.maritalStatus?.id ? candidate.maritalStatus : maritalStatusOption" *ngFor="let maritalStatusOption of maritalstatuses; trackBy: trackMaritalStatusById">{{maritalStatusOption.name}}</option>
             </select>
         </div>
     </div>

@@ -28,6 +28,20 @@
             </div>
         </div>
         <div class="form-group">
+            <label jhiTranslate="s1App.candidate.gender" for="field_gender">Gender</label>
+            <select class="form-control" id="field_gender" name="gender" [(ngModel)]="candidate.gender" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="genderOption.id === candidate.gender?.id ? candidate.gender : genderOption" *ngFor="let genderOption of genders; trackBy: trackGenderById">{{genderOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.candidate.prefix" for="field_prefix">Prefix</label>
+            <select class="form-control" id="field_prefix" name="prefix" [(ngModel)]="candidate.prefix" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prefixOption.id === candidate.prefix?.id ? candidate.prefix : prefixOption" *ngFor="let prefixOption of prefixes; trackBy: trackPrefixById">{{prefixOption.name}}</option>
+            </select>
+        </div>        
+        <div class="form-group">
             <label class="form-control-label" jhiTranslate="s1App.candidate.firstName" for="field_firstName">First Name</label>
             <input type="text" class="form-control" name="firstName" id="field_firstName"
                 [(ngModel)]="candidate.firstName" required maxlength="256" />
@@ -129,20 +143,7 @@
                 [(ngModel)]="candidate.companyCode"  />
         </div>
 
-        <div class="form-group">
-            <label jhiTranslate="s1App.candidate.prefix" for="field_prefix">Prefix</label>
-            <select class="form-control" id="field_prefix" name="prefix" [(ngModel)]="candidate.prefix" >
-                <option [ngValue]="null"></option>
-                <option [ngValue]="prefixOption.id === candidate.prefix?.id ? candidate.prefix : prefixOption" *ngFor="let prefixOption of prefixes; trackBy: trackPrefixById">{{prefixOption.name}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label jhiTranslate="s1App.candidate.gender" for="field_gender">Gender</label>
-            <select class="form-control" id="field_gender" name="gender" [(ngModel)]="candidate.gender" >
-                <option [ngValue]="null"></option>
-                <option [ngValue]="genderOption.id === candidate.gender?.id ? candidate.gender : genderOption" *ngFor="let genderOption of genders; trackBy: trackGenderById">{{genderOption.name}}</option>
-            </select>
-        </div>
+        
         <div class="form-group">
             <label jhiTranslate="s1App.candidate.bloodType" for="field_bloodType">Blood Type</label>
             <select class="form-control" id="field_bloodType" name="bloodType" [(ngModel)]="candidate.bloodType" >

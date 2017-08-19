@@ -4,10 +4,30 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="row-md jh-entity-details">
+    	<dt><span jhiTranslate="s1App.candidate.tenantId">Tenant Id</span></dt>
+        <dd>
+            <span>{{candidate.tenantId}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.candidate.companyCode">Company Code</span></dt>
+        <dd>
+            <span>{{candidate.companyCode}}</span>
+        </dd> 
         <dt><span jhiTranslate="s1App.candidate.code">Code</span></dt>
         <dd>
             <span>{{candidate.code}}</span>
         </dd>
+        <dt><span jhiTranslate="s1App.candidate.gender">Gender</span></dt>
+        <dd>
+            <div *ngIf="candidate.gender">
+                <a [routerLink]="['/gender', candidate.gender?.id]">{{candidate.gender?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="s1App.candidate.prefix">Prefix</span></dt>        
+        <dd>
+            <div *ngIf="candidate.prefix">
+                <a [routerLink]="['/prefix', candidate.prefix?.id]">{{candidate.prefix?.name}}</a>
+            </div>
+        </dd>        
         <dt><span jhiTranslate="s1App.candidate.firstName">First Name</span></dt>
         <dd>
             <span>{{candidate.firstName}}</span>
@@ -39,61 +59,41 @@
         <dt><span jhiTranslate="s1App.candidate.activeFlag">Active Flag</span></dt>
         <dd>
             <span>{{candidate.activeFlag}}</span>
-        </dd>
-        <dt><span jhiTranslate="s1App.candidate.tenantId">Tenant Id</span></dt>
-        <dd>
-            <span>{{candidate.tenantId}}</span>
-        </dd>
-        <dt><span jhiTranslate="s1App.candidate.companyCode">Company Code</span></dt>
-        <dd>
-            <span>{{candidate.companyCode}}</span>
-        </dd>
-        <dt><span jhiTranslate="s1App.candidate.prefix">Prefix</span></dt>
-        <dd>
-            <div *ngIf="candidate.prefix">
-                <a [routerLink]="['/prefix', candidate.prefix?.id]">{{candidate.prefix?.id}}</a>
-            </div>
-        </dd>
-        <dt><span jhiTranslate="s1App.candidate.gender">Gender</span></dt>
-        <dd>
-            <div *ngIf="candidate.gender">
-                <a [routerLink]="['/gender', candidate.gender?.id]">{{candidate.gender?.id}}</a>
-            </div>
-        </dd>
+        </dd>       
         <dt><span jhiTranslate="s1App.candidate.bloodType">Blood Type</span></dt>
         <dd>
             <div *ngIf="candidate.bloodType">
-                <a [routerLink]="['/blood-type', candidate.bloodType?.id]">{{candidate.bloodType?.id}}</a>
+                <a [routerLink]="['/blood-type', candidate.bloodType?.id]">{{candidate.bloodType?.name}}</a>
             </div>
         </dd>
         <dt><span jhiTranslate="s1App.candidate.nationality">Nationality</span></dt>
         <dd>
             <div *ngIf="candidate.nationality">
-                <a [routerLink]="['/nationality', candidate.nationality?.id]">{{candidate.nationality?.id}}</a>
+                <a [routerLink]="['/nationality', candidate.nationality?.id]">{{candidate.nationality?.name}}</a>
             </div>
         </dd>
         <dt><span jhiTranslate="s1App.candidate.race">Race</span></dt>
         <dd>
             <div *ngIf="candidate.race">
-                <a [routerLink]="['/race', candidate.race?.id]">{{candidate.race?.id}}</a>
+                <a [routerLink]="['/race', candidate.race?.id]">{{candidate.race?.name}}</a>
             </div>
         </dd>
         <dt><span jhiTranslate="s1App.candidate.religion">Religion</span></dt>
         <dd>
             <div *ngIf="candidate.religion">
-                <a [routerLink]="['/religion', candidate.religion?.id]">{{candidate.religion?.id}}</a>
+                <a [routerLink]="['/religion', candidate.religion?.id]">{{candidate.religion?.name}}</a>
             </div>
         </dd>
         <dt><span jhiTranslate="s1App.candidate.militaryStatus">Military Status</span></dt>
         <dd>
             <div *ngIf="candidate.militaryStatus">
-                <a [routerLink]="['/military-status', candidate.militaryStatus?.id]">{{candidate.militaryStatus?.id}}</a>
+                <a [routerLink]="['/military-status', candidate.militaryStatus?.id]">{{candidate.militaryStatus?.name}}</a>
             </div>
         </dd>
         <dt><span jhiTranslate="s1App.candidate.maritalStatus">Marital Status</span></dt>
         <dd>
             <div *ngIf="candidate.maritalStatus">
-                <a [routerLink]="['/marital-status', candidate.maritalStatus?.id]">{{candidate.maritalStatus?.id}}</a>
+                <a [routerLink]="['/marital-status', candidate.maritalStatus?.id]">{{candidate.maritalStatus?.name}}</a>
             </div>
         </dd>
     </dl>

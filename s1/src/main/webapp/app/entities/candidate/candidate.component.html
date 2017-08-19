@@ -30,7 +30,11 @@
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tenantId"><span jhiTranslate="s1App.candidate.tenantId">Tenant Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="companyCode"><span jhiTranslate="s1App.candidate.companyCode">Company Code</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="code"><span jhiTranslate="s1App.candidate.code">Code</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="gender.id"><span jhiTranslate="s1App.candidate.gender">Gender</span> <span class="fa fa-sort"></span></th>
+			<th jhiSortBy="prefix.id"><span jhiTranslate="s1App.candidate.prefix">Prefix</span> <span class="fa fa-sort"></span></th>            
             <th jhiSortBy="firstName"><span jhiTranslate="s1App.candidate.firstName">First Name</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="middleName"><span jhiTranslate="s1App.candidate.middleName">Middle Name</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="lastName"><span jhiTranslate="s1App.candidate.lastName">Last Name</span> <span class="fa fa-sort"></span></th>
@@ -39,10 +43,7 @@
             <th jhiSortBy="mobileNumber"><span jhiTranslate="s1App.candidate.mobileNumber">Mobile Number</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="phoneNumber"><span jhiTranslate="s1App.candidate.phoneNumber">Phone Number</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="activeFlag"><span jhiTranslate="s1App.candidate.activeFlag">Active Flag</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="tenantId"><span jhiTranslate="s1App.candidate.tenantId">Tenant Id</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="companyCode"><span jhiTranslate="s1App.candidate.companyCode">Company Code</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="prefix.id"><span jhiTranslate="s1App.candidate.prefix">Prefix</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="gender.id"><span jhiTranslate="s1App.candidate.gender">Gender</span> <span class="fa fa-sort"></span></th>
+
             <th jhiSortBy="bloodType.id"><span jhiTranslate="s1App.candidate.bloodType">Blood Type</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="nationality.id"><span jhiTranslate="s1App.candidate.nationality">Nationality</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="race.id"><span jhiTranslate="s1App.candidate.race">Race</span> <span class="fa fa-sort"></span></th>
@@ -55,7 +56,19 @@
             <tbody>
             <tr *ngFor="let candidate of candidates ;trackBy: trackId">
                 <td><a [routerLink]="['../candidate', candidate.id ]">{{candidate.id}}</a></td>
+				<td>{{candidate.tenantId}}</td>
+                <td>{{candidate.companyCode}}</td> 
                 <td>{{candidate.code}}</td>
+                <td>
+                    <div *ngIf="candidate.gender">
+                        <a [routerLink]="['../gender', candidate.gender?.id ]" >{{candidate.gender?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="candidate.prefix">
+                        <a [routerLink]="['../prefix', candidate.prefix?.id ]" >{{candidate.prefix?.name}}</a>
+                    </div>
+                </td>
                 <td>{{candidate.firstName}}</td>
                 <td>{{candidate.middleName}}</td>
                 <td>{{candidate.lastName}}</td>
@@ -64,46 +77,35 @@
                 <td>{{candidate.mobileNumber}}</td>
                 <td>{{candidate.phoneNumber}}</td>
                 <td>{{candidate.activeFlag}}</td>
-                <td>{{candidate.tenantId}}</td>
-                <td>{{candidate.companyCode}}</td>
-                <td>
-                    <div *ngIf="candidate.prefix">
-                        <a [routerLink]="['../prefix', candidate.prefix?.id ]" >{{candidate.prefix?.id}}</a>
-                    </div>
-                </td>
-                <td>
-                    <div *ngIf="candidate.gender">
-                        <a [routerLink]="['../gender', candidate.gender?.id ]" >{{candidate.gender?.id}}</a>
-                    </div>
-                </td>
+                              
                 <td>
                     <div *ngIf="candidate.bloodType">
-                        <a [routerLink]="['../blood-type', candidate.bloodType?.id ]" >{{candidate.bloodType?.id}}</a>
+                        <a [routerLink]="['../blood-type', candidate.bloodType?.id ]" >{{candidate.bloodType?.name}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="candidate.nationality">
-                        <a [routerLink]="['../nationality', candidate.nationality?.id ]" >{{candidate.nationality?.id}}</a>
+                        <a [routerLink]="['../nationality', candidate.nationality?.id ]" >{{candidate.nationality?.name}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="candidate.race">
-                        <a [routerLink]="['../race', candidate.race?.id ]" >{{candidate.race?.id}}</a>
+                        <a [routerLink]="['../race', candidate.race?.id ]" >{{candidate.race?.name}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="candidate.religion">
-                        <a [routerLink]="['../religion', candidate.religion?.id ]" >{{candidate.religion?.id}}</a>
+                        <a [routerLink]="['../religion', candidate.religion?.id ]" >{{candidate.religion?.name}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="candidate.militaryStatus">
-                        <a [routerLink]="['../military-status', candidate.militaryStatus?.id ]" >{{candidate.militaryStatus?.id}}</a>
+                        <a [routerLink]="['../military-status', candidate.militaryStatus?.id ]" >{{candidate.militaryStatus?.name}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="candidate.maritalStatus">
-                        <a [routerLink]="['../marital-status', candidate.maritalStatus?.id ]" >{{candidate.maritalStatus?.id}}</a>
+                        <a [routerLink]="['../marital-status', candidate.maritalStatus?.id ]" >{{candidate.maritalStatus?.name}}</a>
                     </div>
                 </td>
                 <td class="text-right">

@@ -36,9 +36,9 @@
     },
     "hcmApp": {
         "candidate" : {
-            "created": "A new Candidate is created with identifier {{ param }}",
-            "updated": "A Candidate is updated with identifier {{ param }}",
-            "deleted": "A Candidate is deleted with identifier {{ param }}"
+            "created": "สร้างข้อมูลผู้สมัครเรียบร้อยแล้ว {{ param }}",
+            "updated": "แก้ไขข้อมูลผู้สมัครเรียบร้อยแล้ว {{ param }}",
+            "deleted": "ลบข้อมูลผู้สมัครเรียบร้อยแล้ว {{ param }}"
         }
     }
 }

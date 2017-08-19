@@ -9,8 +9,8 @@ entity Employee {
 	firstName String maxlength (256) required
 	middleName String maxlength (256)
 	lastName String maxlength (256)
-	birthDate Date
-	joinedDate Date
+	birthDate LocalDate
+	joinedDate LocalDate
 }
 
 entity EmployeeContact{
@@ -20,16 +20,16 @@ entity EmployeeContact{
 	mobileNumber String maxlength (256)
 	phoneNumber String maxlength (256)
 	phoneNoExtension String maxlength(128)
-	activeDate Date
+	activeDate LocalDate
 }
 
 entity ProbationPeriod{
 	tenantId Long
 	companyCode Long
-	periodStart Date
-	periodEnd Date
-	evaluatePeriodStart Date
-	evaluatePeriodEnd Date	
+	periodStart LocalDate
+	periodEnd LocalDate
+	evaluatePeriodStart LocalDate
+	evaluatePeriodEnd LocalDate	
 	
 }
 

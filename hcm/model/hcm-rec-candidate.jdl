@@ -7,7 +7,7 @@ entity Candidate {
 	firstName String maxlength (256) required
 	middleName String maxlength (256)
 	lastName String maxlength (256)
-	birthDate Date
+	birthDate LocalDate
 	personalEmail String maxlength (256)
 	mobileNumber String maxlength (256)
 	phoneNumber String maxlength (256)

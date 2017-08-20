@@ -1,0 +1,44 @@
+{
+    "s1App": {
+        "candidate" : {
+            "home": {
+                "title": "Candidates",
+                "createLabel": "Create a new Candidate",
+                "createOrEditLabel": "Create or edit a Candidate",
+                "search": "Search for Candidate"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Candidate {{ id }}?"
+            },
+            "detail": {
+                "title": "Candidate"
+            },
+            "code": "Code",
+            "firstName": "First Name",
+            "middleName": "Middle Name",
+            "lastName": "Last Name",
+            "birthDate": "Birth Date",
+            "personalEmail": "Personal Email",
+            "mobileNumber": "Mobile Number",
+            "phoneNumber": "Phone Number",
+            "activeFlag": "Active Flag",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code",
+            "prefix": "Prefix",
+            "gender": "Gender",
+            "bloodType": "Blood Type",
+            "nationality": "Nationality",
+            "race": "Race",
+            "religion": "Religion",
+            "militaryStatus": "Military Status",
+            "maritalStatus": "Marital Status"
+        }
+    },
+    "hcmApp": {
+        "candidate" : {
+            "created": "A new Candidate is created with identifier {{ param }}",
+            "updated": "A Candidate is updated with identifier {{ param }}",
+            "deleted": "A Candidate is deleted with identifier {{ param }}"
+        }
+    }
+}

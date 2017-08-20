@@ -1,0 +1,44 @@
+{
+    "s1App": {
+        "candidate" : {
+            "home": {
+                "title": "ผู้สมัคร",
+                "createLabel": "เพิ่มผู้สมัคร",
+                "createOrEditLabel": "สร้างหรือแก้ไขข้อมูล ผู้สมัคร",
+                "search": "ค้นหาผู้สมัคร"
+            },
+            "delete": {
+                "question": "ต้องการลบข้อมูลผู้สมัคร {{ id }} ใช่หรือไม่ ?"
+            },
+            "detail": {
+                "title": "ผู้สมัคร"
+            },
+            "code": "รหัส",
+            "firstName": "ชื่อ",
+            "middleName": "ชื่อกลาง",
+            "lastName": "นามสกุล",
+            "birthDate": "วันเกิด",
+            "personalEmail": "อีเมลล์",
+            "mobileNumber": "หมายเลขโทรศัพท์มือถือ",
+            "phoneNumber": "หมายเลขโทรศัพท์",
+            "activeFlag": "การใช้งานข้อมูล",
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code",
+            "prefix": "คำนำหน้าชื่อ",
+            "gender": "เพศ",
+            "bloodType": "หมู่โลหิต",
+            "nationality": "สัญชาติ",
+            "race": "เชื้อชาติ",
+            "religion": "ศาสนา",
+            "militaryStatus": "สถานภาพทางทหาร",
+            "maritalStatus": "สถานภาพการสมรส"
+        }
+    },
+    "hcmApp": {
+        "candidate" : {
+            "created": "สร้างข้อมูลผู้สมัครเรียบร้อยแล้ว {{ param }}",
+            "updated": "แก้ไขข้อมูลผู้สมัครเรียบร้อยแล้ว {{ param }}",
+            "deleted": "ลบข้อมูลผู้สมัครเรียบร้อยแล้ว {{ param }}"
+        }
+    }
+}

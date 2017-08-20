@@ -12,6 +12,8 @@ import { S1EmployeeModule } from './employee/employee.module';
 import { S1ProbationDayModule } from './probation-day/probation-day.module';
 import { S1ProbationPeriodModule } from './probation-period/probation-period.module';
 import { S1EmployeeContactModule } from './employee-contact/employee-contact.module';
+import { S1CandidateModule } from './candidate/candidate.module';
+
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
 @NgModule({
@@ -28,6 +30,7 @@ import { S1EmployeeContactModule } from './employee-contact/employee-contact.mod
         S1ProbationDayModule,
         S1ProbationPeriodModule,
         S1EmployeeContactModule,
+        S1CandidateModule,
         /* jhipster-needle-add-entity-module - JHipster will add entity modules here */
     ],
     declarations: [],

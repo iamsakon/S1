@@ -1,0 +1,33 @@
+{
+    "s1App": {
+        "probationPeriod" : {
+            "home": {
+                "title": "Probation Periods",
+                "createLabel": "สร้าง Probation Period",
+                "createOrEditLabel": "สร้างหรือแก้ไข Probation Period",
+                "search": "ค้นหา Probation Period"
+            },
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Probation Period {{ id }}?"
+            },
+            "detail": {
+                "title": "Probation Period"
+            },
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code",
+            "periodStart": "Period Start",
+            "periodEnd": "Period End",
+            "evaluatePeriodStart": "Evaluate Period Start",
+            "evaluatePeriodEnd": "Evaluate Period End",
+            "probation": "Probation",
+            "employee": "Employee"
+        }
+    },
+    "hcmApp": {
+        "probationPeriod" : {
+            "created": "Probation Period ถูกสร้างด้วย {{ param }}",
+            "updated": "Probation Period ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Probation Period ถูกลบด้วย {{ param }}"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "s1App": {
+        "employee" : {
+            "home": {
+                "title": "Employees",
+                "createLabel": "Create a new Employee",
+                "createOrEditLabel": "Create or edit a Employee",
+                "search": "Search for Employee"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Employee {{ id }}?"
+            },
+            "detail": {
+                "title": "Employee"
+            },
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code",
+            "employeeCode": "Employee Code",
+            "firstName": "First Name",
+            "middleName": "Middle Name",
+            "lastName": "Last Name",
+            "birthDate": "Birth Date",
+            "joinedDate": "Joined Date",
+            "employeeContact": "Employee Contact",
+            "probationPeriod": "Probation Period",
+            "prefix": "Prefix",
+            "gender": "Gender",
+            "bloodType": "Blood Type",
+            "nationality": "Nationality",
+            "race": "Race",
+            "religion": "Religion",
+            "militaryStatus": "Military Status",
+            "maritalStatus": "Marital Status"
+        }
+    },
+    "hcmApp": {
+        "employee" : {
+            "created": "A new Employee is created with identifier {{ param }}",
+            "updated": "A Employee is updated with identifier {{ param }}",
+            "deleted": "A Employee is deleted with identifier {{ param }}"
+        }
+    }
+}

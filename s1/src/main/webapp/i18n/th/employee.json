@@ -1,0 +1,43 @@
+{
+    "s1App": {
+        "employee" : {
+            "home": {
+                "title": "พนักงาน",
+                "createLabel": "สร้าง ข้อมูลพนักงาน",
+                "createOrEditLabel": "สร้างหรือแก้ไขข้อมูลพนักงาน",
+                "search": "ค้นหาข้อมูลพนักงาน"
+            },
+            "delete": {
+                "question": "คุณต้องการที่จะลบข้อมูลพนักงาน {{ id }}?"
+            },
+            "detail": {
+                "title": "พนักงาน"
+            },
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code",
+            "employeeCode": "รหัสพนักงาน",
+            "firstName": "ชื่อ",
+            "middleName": "ชื่อกลาง",
+            "lastName": "นามสกุล",
+            "birthDate": "วันเกิด",
+            "joinedDate": "วันเริ่มงาน",
+            "employeeContact": "Employee Contact",
+            "probationPeriod": "Probation Period",
+            "prefix": "คำนำหน้า",
+            "gender": "เพศ",
+            "bloodType": "กรุ๊ปเลือด",
+            "nationality": "สัญชาติ",
+            "race": "เชื้อชาติ",
+            "religion": "ศาสนา",
+            "militaryStatus": "สถานภาพทางทหาร",
+            "maritalStatus": "สถานภาพสมรส"
+        }
+    },
+    "hcmApp": {
+        "employee" : {
+            "created": "Employee ถูกสร้างด้วย {{ param }}",
+            "updated": "Employee ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Employee ถูกลบด้วย {{ param }}"
+        }
+    }
+}

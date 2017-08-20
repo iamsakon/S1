@@ -1,0 +1,101 @@
+
+<div *ngIf="employee">
+    <h2><span jhiTranslate="s1App.employee.detail.title">Employee</span> {{employee.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="s1App.employee.tenantId">Tenant Id</span></dt>
+        <dd>
+            <span>{{employee.tenantId}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.companyCode">Company Code</span></dt>
+        <dd>
+            <span>{{employee.companyCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.employeeCode">Employee Code</span></dt>
+        <dd>
+            <span>{{employee.employeeCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.firstName">First Name</span></dt>
+        <dd>
+            <span>{{employee.firstName}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.middleName">Middle Name</span></dt>
+        <dd>
+            <span>{{employee.middleName}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{employee.lastName}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.birthDate">Birth Date</span></dt>
+        <dd>
+            <span>{{employee.birthDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.joinedDate">Joined Date</span></dt>
+        <dd>
+            <span>{{employee.joinedDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.prefix">Prefix</span></dt>
+        <dd>
+            <div *ngIf="employee.prefix">
+                <a [routerLink]="['/prefix', employee.prefix?.id]">{{employee.prefix?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.gender">Gender</span></dt>
+        <dd>
+            <div *ngIf="employee.gender">
+                <a [routerLink]="['/gender', employee.gender?.id]">{{employee.gender?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.bloodType">Blood Type</span></dt>
+        <dd>
+            <div *ngIf="employee.bloodType">
+                <a [routerLink]="['/blood-type', employee.bloodType?.id]">{{employee.bloodType?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.nationality">Nationality</span></dt>
+        <dd>
+            <div *ngIf="employee.nationality">
+                <a [routerLink]="['/nationality', employee.nationality?.id]">{{employee.nationality?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.race">Race</span></dt>
+        <dd>
+            <div *ngIf="employee.race">
+                <a [routerLink]="['/race', employee.race?.id]">{{employee.race?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.religion">Religion</span></dt>
+        <dd>
+            <div *ngIf="employee.religion">
+                <a [routerLink]="['/religion', employee.religion?.id]">{{employee.religion?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.militaryStatus">Military Status</span></dt>
+        <dd>
+            <div *ngIf="employee.militaryStatus">
+                <a [routerLink]="['/military-status', employee.militaryStatus?.id]">{{employee.militaryStatus?.name}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="s1App.employee.maritalStatus">Marital Status</span></dt>
+        <dd>
+            <div *ngIf="employee.maritalStatus">
+                <a [routerLink]="['/marital-status', employee.maritalStatus?.id]">{{employee.maritalStatus?.name}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'employee/'+ employee.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

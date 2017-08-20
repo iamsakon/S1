@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ProbationPeriod.
+    -->
+    <changeSet id="20170819052658-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="probation_id"
+                                 baseTableName="hcm_t_probation_period"
+                                 constraintName="fk_probation_period_probation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hcm_m_probation_day"/>
+
+        <addForeignKeyConstraint baseColumnNames="employee_id"
+                                 baseTableName="hcm_t_probation_period"
+                                 constraintName="fk_probation_period_employee_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hcm_t_employee"/>
+
+    </changeSet>
+</databaseChangeLog>

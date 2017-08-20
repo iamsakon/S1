@@ -1,0 +1,33 @@
+{
+    "s1App": {
+        "employeeContact" : {
+            "home": {
+                "title": "Employee Contacts",
+                "createLabel": "สร้าง Employee Contact",
+                "createOrEditLabel": "สร้างหรือแก้ไข Employee Contact",
+                "search": "ค้นหา Employee Contact"
+            },
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Employee Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "Employee Contact"
+            },
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code",
+            "email": "Email",
+            "mobileNumber": "Mobile Number",
+            "phoneNumber": "Phone Number",
+            "phoneNoExtension": "Phone No Extension",
+            "activeDate": "Active Date",
+            "employee": "Employee"
+        }
+    },
+    "hcmApp": {
+        "employeeContact" : {
+            "created": "Employee Contact ถูกสร้างด้วย {{ param }}",
+            "updated": "Employee Contact ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Employee Contact ถูกลบด้วย {{ param }}"
+        }
+    }
+}

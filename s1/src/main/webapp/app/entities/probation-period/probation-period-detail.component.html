@@ -1,0 +1,57 @@
+
+<div *ngIf="probationPeriod">
+    <h2><span jhiTranslate="s1App.probationPeriod.detail.title">Probation Period</span> {{probationPeriod.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="s1App.probationPeriod.tenantId">Tenant Id</span></dt>
+        <dd>
+            <span>{{probationPeriod.tenantId}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.probationPeriod.companyCode">Company Code</span></dt>
+        <dd>
+            <span>{{probationPeriod.companyCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.probationPeriod.periodStart">Period Start</span></dt>
+        <dd>
+            <span>{{probationPeriod.periodStart | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.probationPeriod.periodEnd">Period End</span></dt>
+        <dd>
+            <span>{{probationPeriod.periodEnd | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.probationPeriod.evaluatePeriodStart">Evaluate Period Start</span></dt>
+        <dd>
+            <span>{{probationPeriod.evaluatePeriodStart | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.probationPeriod.evaluatePeriodEnd">Evaluate Period End</span></dt>
+        <dd>
+            <span>{{probationPeriod.evaluatePeriodEnd | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.probationPeriod.probation">Probation</span></dt>
+        <dd>
+            <div *ngIf="probationPeriod.probation">
+                <a [routerLink]="['/probation-day', probationPeriod.probation?.id]">{{probationPeriod.probation?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="s1App.probationPeriod.employee">Employee</span></dt>
+        <dd>
+            <div *ngIf="probationPeriod.employee">
+                <a [routerLink]="['/employee', probationPeriod.employee?.id]">{{probationPeriod.employee?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'probation-period/'+ probationPeriod.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

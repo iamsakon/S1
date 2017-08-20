@@ -1,0 +1,28 @@
+{
+    "s1App": {
+        "probationDay" : {
+            "home": {
+                "title": "Probation Days",
+                "createLabel": "สร้าง Probation Day",
+                "createOrEditLabel": "สร้างหรือแก้ไข Probation Day",
+                "search": "ค้นหา Probation Day"
+            },
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Probation Day {{ id }}?"
+            },
+            "detail": {
+                "title": "Probation Day"
+            },
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code",
+            "amountDate": "Amount Date"
+        }
+    },
+    "hcmApp": {
+        "probationDay" : {
+            "created": "Probation Day ถูกสร้างด้วย {{ param }}",
+            "updated": "Probation Day ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Probation Day ถูกลบด้วย {{ param }}"
+        }
+    }
+}

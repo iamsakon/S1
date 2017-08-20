@@ -1,0 +1,163 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myEmployeeLabel" jhiTranslate="s1App.employee.home.createOrEditLabel">Create or edit a Employee</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!employee.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="employee.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employee.tenantId" for="field_tenantId">Tenant Id</label>
+            <input type="number" class="form-control" name="tenantId" id="field_tenantId"
+                [(ngModel)]="employee.tenantId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employee.companyCode" for="field_companyCode">Company Code</label>
+            <input type="number" class="form-control" name="companyCode" id="field_companyCode"
+                [(ngModel)]="employee.companyCode"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employee.employeeCode" for="field_employeeCode">Employee Code</label>
+            <input type="text" class="form-control" name="employeeCode" id="field_employeeCode"
+                [(ngModel)]="employee.employeeCode" required maxlength="128" />
+            <div [hidden]="!(editForm.controls.employeeCode?.dirty && editForm.controls.employeeCode?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.employeeCode?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.employeeCode?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 128 }">
+                   This field cannot be longer than 128 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employee.firstName" for="field_firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                [(ngModel)]="employee.firstName" required maxlength="256" />
+            <div [hidden]="!(editForm.controls.firstName?.dirty && editForm.controls.firstName?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.firstName?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.firstName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 256 }">
+                   This field cannot be longer than 256 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employee.middleName" for="field_middleName">Middle Name</label>
+            <input type="text" class="form-control" name="middleName" id="field_middleName"
+                [(ngModel)]="employee.middleName" maxlength="256" />
+            <div [hidden]="!(editForm.controls.middleName?.dirty && editForm.controls.middleName?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.middleName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 256 }">
+                   This field cannot be longer than 256 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employee.lastName" for="field_lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                [(ngModel)]="employee.lastName" maxlength="256" />
+            <div [hidden]="!(editForm.controls.lastName?.dirty && editForm.controls.lastName?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.lastName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 256 }">
+                   This field cannot be longer than 256 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employee.birthDate" for="field_birthDate">Birth Date</label>
+            <div class="input-group">
+                <input id="field_birthDate" type="text" class="form-control" name="birthDate" ngbDatepicker  #birthDateDp="ngbDatepicker" [(ngModel)]="employee.birthDate"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="birthDateDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employee.joinedDate" for="field_joinedDate">Joined Date</label>
+            <div class="input-group">
+                <input id="field_joinedDate" type="text" class="form-control" name="joinedDate" ngbDatepicker  #joinedDateDp="ngbDatepicker" [(ngModel)]="employee.joinedDate"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="joinedDateDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="s1App.employee.prefix" for="field_prefix">Prefix</label>
+            <select class="form-control" id="field_prefix" name="prefix" [(ngModel)]="employee.prefix" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prefixOption.id === employee.prefix?.id ? employee.prefix : prefixOption" *ngFor="let prefixOption of prefixes; trackBy: trackPrefixById">{{prefixOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.employee.gender" for="field_gender">Gender</label>
+            <select class="form-control" id="field_gender" name="gender" [(ngModel)]="employee.gender" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="genderOption.id === employee.gender?.id ? employee.gender : genderOption" *ngFor="let genderOption of genders; trackBy: trackGenderById">{{genderOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.employee.bloodType" for="field_bloodType">Blood Type</label>
+            <select class="form-control" id="field_bloodType" name="bloodType" [(ngModel)]="employee.bloodType" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="bloodTypeOption.id === employee.bloodType?.id ? employee.bloodType : bloodTypeOption" *ngFor="let bloodTypeOption of bloodtypes; trackBy: trackBloodTypeById">{{bloodTypeOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.employee.nationality" for="field_nationality">Nationality</label>
+            <select class="form-control" id="field_nationality" name="nationality" [(ngModel)]="employee.nationality" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="nationalityOption.id === employee.nationality?.id ? employee.nationality : nationalityOption" *ngFor="let nationalityOption of nationalities; trackBy: trackNationalityById">{{nationalityOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.employee.race" for="field_race">Race</label>
+            <select class="form-control" id="field_race" name="race" [(ngModel)]="employee.race" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="raceOption.id === employee.race?.id ? employee.race : raceOption" *ngFor="let raceOption of races; trackBy: trackRaceById">{{raceOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.employee.religion" for="field_religion">Religion</label>
+            <select class="form-control" id="field_religion" name="religion" [(ngModel)]="employee.religion" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="religionOption.id === employee.religion?.id ? employee.religion : religionOption" *ngFor="let religionOption of religions; trackBy: trackReligionById">{{religionOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.employee.militaryStatus" for="field_militaryStatus">Military Status</label>
+            <select class="form-control" id="field_militaryStatus" name="militaryStatus" [(ngModel)]="employee.militaryStatus" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="militaryStatusOption.id === employee.militaryStatus?.id ? employee.militaryStatus : militaryStatusOption" *ngFor="let militaryStatusOption of militarystatuses; trackBy: trackMilitaryStatusById">{{militaryStatusOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.employee.maritalStatus" for="field_maritalStatus">Marital Status</label>
+            <select class="form-control" id="field_maritalStatus" name="maritalStatus" [(ngModel)]="employee.maritalStatus" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="maritalStatusOption.id === employee.maritalStatus?.id ? employee.maritalStatus : maritalStatusOption" *ngFor="let maritalStatusOption of maritalstatuses; trackBy: trackMaritalStatusById">{{maritalStatusOption.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

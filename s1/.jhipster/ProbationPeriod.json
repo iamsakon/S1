@@ -1,0 +1,49 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "probation",
+            "otherEntityName": "probationDay",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "employee",
+            "otherEntityName": "employee",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tenantId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "companyCode",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "periodStart",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "periodEnd",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "evaluatePeriodStart",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "evaluatePeriodEnd",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170819052658",
+    "entityTableName": "hcm_t_probation_period",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "microserviceName": "hcm"
+}

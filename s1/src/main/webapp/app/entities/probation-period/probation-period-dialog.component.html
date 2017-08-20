@@ -1,0 +1,89 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myProbationPeriodLabel" jhiTranslate="s1App.probationPeriod.home.createOrEditLabel">Create or edit a Probation Period</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!probationPeriod.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="probationPeriod.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.probationPeriod.tenantId" for="field_tenantId">Tenant Id</label>
+            <input type="number" class="form-control" name="tenantId" id="field_tenantId"
+                [(ngModel)]="probationPeriod.tenantId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.probationPeriod.companyCode" for="field_companyCode">Company Code</label>
+            <input type="number" class="form-control" name="companyCode" id="field_companyCode"
+                [(ngModel)]="probationPeriod.companyCode"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.probationPeriod.periodStart" for="field_periodStart">Period Start</label>
+            <div class="input-group">
+                <input id="field_periodStart" type="text" class="form-control" name="periodStart" ngbDatepicker  #periodStartDp="ngbDatepicker" [(ngModel)]="probationPeriod.periodStart"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="periodStartDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.probationPeriod.periodEnd" for="field_periodEnd">Period End</label>
+            <div class="input-group">
+                <input id="field_periodEnd" type="text" class="form-control" name="periodEnd" ngbDatepicker  #periodEndDp="ngbDatepicker" [(ngModel)]="probationPeriod.periodEnd"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="periodEndDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.probationPeriod.evaluatePeriodStart" for="field_evaluatePeriodStart">Evaluate Period Start</label>
+            <div class="input-group">
+                <input id="field_evaluatePeriodStart" type="text" class="form-control" name="evaluatePeriodStart" ngbDatepicker  #evaluatePeriodStartDp="ngbDatepicker" [(ngModel)]="probationPeriod.evaluatePeriodStart"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="evaluatePeriodStartDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.probationPeriod.evaluatePeriodEnd" for="field_evaluatePeriodEnd">Evaluate Period End</label>
+            <div class="input-group">
+                <input id="field_evaluatePeriodEnd" type="text" class="form-control" name="evaluatePeriodEnd" ngbDatepicker  #evaluatePeriodEndDp="ngbDatepicker" [(ngModel)]="probationPeriod.evaluatePeriodEnd"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="evaluatePeriodEndDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="s1App.probationPeriod.probation" for="field_probation">Probation</label>
+            <select class="form-control" id="field_probation" name="probation" [(ngModel)]="probationPeriod.probation" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="probationDayOption.id === probationPeriod.probation?.id ? probationPeriod.probation : probationDayOption" *ngFor="let probationDayOption of probationdays; trackBy: trackProbationDayById">{{probationDayOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="s1App.probationPeriod.employee" for="field_employee">Employee</label>
+            <select class="form-control" id="field_employee" name="employee" [(ngModel)]="probationPeriod.employee" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="employeeOption.id === probationPeriod.employee?.id ? probationPeriod.employee : employeeOption" *ngFor="let employeeOption of employees; trackBy: trackEmployeeById">{{employeeOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

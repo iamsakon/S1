@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Employee.
+    -->
+    <changeSet id="20170819052656-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="prefix_id"
+                                 baseTableName="hcm_t_employee"
+                                 constraintName="fk_employee_prefix_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hcm_m_prefix"/>
+
+        <addForeignKeyConstraint baseColumnNames="gender_id"
+                                 baseTableName="hcm_t_employee"
+                                 constraintName="fk_employee_gender_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hcm_m_gender"/>
+
+        <addForeignKeyConstraint baseColumnNames="blood_type_id"
+                                 baseTableName="hcm_t_employee"
+                                 constraintName="fk_employee_blood_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hcm_m_blood_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="nationality_id"
+                                 baseTableName="hcm_t_employee"
+                                 constraintName="fk_employee_nationality_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hcm_m_nationality"/>
+
+        <addForeignKeyConstraint baseColumnNames="race_id"
+                                 baseTableName="hcm_t_employee"
+                                 constraintName="fk_employee_race_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hcm_m_race"/>
+
+        <addForeignKeyConstraint baseColumnNames="religion_id"
+                                 baseTableName="hcm_t_employee"
+                                 constraintName="fk_employee_religion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hcm_m_religion"/>
+
+        <addForeignKeyConstraint baseColumnNames="military_status_id"
+                                 baseTableName="hcm_t_employee"
+                                 constraintName="fk_employee_military_status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hcm_m_military_status"/>
+
+        <addForeignKeyConstraint baseColumnNames="marital_status_id"
+                                 baseTableName="hcm_t_employee"
+                                 constraintName="fk_employee_marital_status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hcm_m_marital_status"/>
+
+    </changeSet>
+</databaseChangeLog>

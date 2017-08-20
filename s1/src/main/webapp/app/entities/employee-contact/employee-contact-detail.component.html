@@ -1,0 +1,55 @@
+
+<div *ngIf="employeeContact">
+    <h2><span jhiTranslate="s1App.employeeContact.detail.title">Employee Contact</span> {{employeeContact.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="s1App.employeeContact.tenantId">Tenant Id</span></dt>
+        <dd>
+            <span>{{employeeContact.tenantId}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employeeContact.companyCode">Company Code</span></dt>
+        <dd>
+            <span>{{employeeContact.companyCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employeeContact.email">Email</span></dt>
+        <dd>
+            <span>{{employeeContact.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employeeContact.mobileNumber">Mobile Number</span></dt>
+        <dd>
+            <span>{{employeeContact.mobileNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employeeContact.phoneNumber">Phone Number</span></dt>
+        <dd>
+            <span>{{employeeContact.phoneNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employeeContact.phoneNoExtension">Phone No Extension</span></dt>
+        <dd>
+            <span>{{employeeContact.phoneNoExtension}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employeeContact.activeDate">Active Date</span></dt>
+        <dd>
+            <span>{{employeeContact.activeDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.employeeContact.employee">Employee</span></dt>
+        <dd>
+            <div *ngIf="employeeContact.employee">
+                <a [routerLink]="['/employee', employeeContact.employee?.id]">{{employeeContact.employee?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'employee-contact/'+ employeeContact.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

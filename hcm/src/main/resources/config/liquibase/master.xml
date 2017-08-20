@@ -13,6 +13,13 @@
     <include file="config/liquibase/changelog/20170807062327_added_entity_MaritalStatus.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20170807062328_added_entity_MilitaryStatus.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20170808090014_added_entity_BloodType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170819052656_added_entity_Employee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170819052657_added_entity_EmployeeContact.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170819052658_added_entity_ProbationPeriod.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170819052659_added_entity_ProbationDay.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20170819052656_added_entity_constraints_Employee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170819052657_added_entity_constraints_EmployeeContact.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170819052658_added_entity_constraints_ProbationPeriod.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

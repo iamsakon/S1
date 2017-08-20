@@ -1,0 +1,99 @@
+<div>
+    <h2>
+        <span jhiTranslate="s1App.probationPeriod.home.title">Probation Periods</span>
+        <button class="btn btn-primary float-right jh-create-entity create-probation-period" [routerLink]="['/', { outlets: { popup: ['probation-period-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="s1App.probationPeriod.home.createLabel">
+            Create new Probation Period
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 's1App.probationPeriod.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="probationPeriods">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tenantId"><span jhiTranslate="s1App.probationPeriod.tenantId">Tenant Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="companyCode"><span jhiTranslate="s1App.probationPeriod.companyCode">Company Code</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="periodStart"><span jhiTranslate="s1App.probationPeriod.periodStart">Period Start</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="periodEnd"><span jhiTranslate="s1App.probationPeriod.periodEnd">Period End</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="evaluatePeriodStart"><span jhiTranslate="s1App.probationPeriod.evaluatePeriodStart">Evaluate Period Start</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="evaluatePeriodEnd"><span jhiTranslate="s1App.probationPeriod.evaluatePeriodEnd">Evaluate Period End</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="probation.id"><span jhiTranslate="s1App.probationPeriod.probation">Probation</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="employee.id"><span jhiTranslate="s1App.probationPeriod.employee">Employee</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let probationPeriod of probationPeriods ;trackBy: trackId">
+                <td><a [routerLink]="['../probation-period', probationPeriod.id ]">{{probationPeriod.id}}</a></td>
+                <td>{{probationPeriod.tenantId}}</td>
+                <td>{{probationPeriod.companyCode}}</td>
+                <td>{{probationPeriod.periodStart | date:'mediumDate'}}</td>
+                <td>{{probationPeriod.periodEnd | date:'mediumDate'}}</td>
+                <td>{{probationPeriod.evaluatePeriodStart | date:'mediumDate'}}</td>
+                <td>{{probationPeriod.evaluatePeriodEnd | date:'mediumDate'}}</td>
+                <td>
+                    <div *ngIf="probationPeriod.probation">
+                        <a [routerLink]="['../probation-day', probationPeriod.probation?.id ]" >{{probationPeriod.probation?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="probationPeriod.employee">
+                        <a [routerLink]="['../employee', probationPeriod.employee?.id ]" >{{probationPeriod.employee?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../probation-period', probationPeriod.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'probation-period/'+ probationPeriod.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'probation-period/'+ probationPeriod.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <div *ngIf="probationPeriods && probationPeriods.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

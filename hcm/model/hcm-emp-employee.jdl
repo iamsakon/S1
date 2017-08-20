@@ -1,0 +1,89 @@
+
+/** 
+ * Entity Prefix
+ */
+entity Employee {
+	tenantId Long
+	companyCode Long
+	employeeCode String maxlength (128) required 
+	firstName String maxlength (256) required
+	middleName String maxlength (256)
+	lastName String maxlength (256)
+	birthDate LocalDate
+	joinedDate LocalDate
+}
+
+entity EmployeeContact{
+	tenantId Long
+	companyCode Long
+	email String maxlength (256)
+	mobileNumber String maxlength (256)
+	phoneNumber String maxlength (256)
+	phoneNoExtension String maxlength(128)
+	activeDate LocalDate
+}
+
+entity ProbationPeriod{
+	tenantId Long
+	companyCode Long
+	periodStart LocalDate
+	periodEnd LocalDate
+	evaluatePeriodStart LocalDate
+	evaluatePeriodEnd LocalDate	
+	
+}
+
+entity ProbationDay{
+	tenantId Long
+	companyCode Long
+	amountDate Integer
+}
+
+relationship OneToMany{
+	Employee to EmployeeContact{employee} 
+}
+
+
+relationship OneToMany{
+	Employee to ProbationPeriod{employee}
+}
+
+relationship ManyToOne{
+	ProbationPeriod{probation} to ProbationDay
+}
+
+relationship ManyToOne {
+  Employee{prefix} to Prefix
+}
+
+relationship ManyToOne {
+  Employee{gender} to Gender
+}
+
+relationship ManyToOne {
+  Employee{bloodType} to BloodType
+}
+
+relationship ManyToOne {
+  Employee{nationality} to Nationality
+}
+
+relationship ManyToOne {
+  Employee{race} to Race
+}
+
+relationship ManyToOne {
+  Employee{religion} to Religion
+}
+
+relationship ManyToOne {
+  Employee{militaryStatus} to MilitaryStatus
+}
+
+relationship ManyToOne {
+  Employee{maritalStatus} to MaritalStatus
+}
+
+microservice * with hcm
+paginate * with pagination 
+service all with serviceClass

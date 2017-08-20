@@ -1,0 +1,96 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myEmployeeContactLabel" jhiTranslate="s1App.employeeContact.home.createOrEditLabel">Create or edit a Employee Contact</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!employeeContact.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="employeeContact.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employeeContact.tenantId" for="field_tenantId">Tenant Id</label>
+            <input type="number" class="form-control" name="tenantId" id="field_tenantId"
+                [(ngModel)]="employeeContact.tenantId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employeeContact.companyCode" for="field_companyCode">Company Code</label>
+            <input type="number" class="form-control" name="companyCode" id="field_companyCode"
+                [(ngModel)]="employeeContact.companyCode"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employeeContact.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                [(ngModel)]="employeeContact.email" maxlength="256" />
+            <div [hidden]="!(editForm.controls.email?.dirty && editForm.controls.email?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.email?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 256 }">
+                   This field cannot be longer than 256 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employeeContact.mobileNumber" for="field_mobileNumber">Mobile Number</label>
+            <input type="text" class="form-control" name="mobileNumber" id="field_mobileNumber"
+                [(ngModel)]="employeeContact.mobileNumber" maxlength="256" />
+            <div [hidden]="!(editForm.controls.mobileNumber?.dirty && editForm.controls.mobileNumber?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.mobileNumber?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 256 }">
+                   This field cannot be longer than 256 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employeeContact.phoneNumber" for="field_phoneNumber">Phone Number</label>
+            <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                [(ngModel)]="employeeContact.phoneNumber" maxlength="256" />
+            <div [hidden]="!(editForm.controls.phoneNumber?.dirty && editForm.controls.phoneNumber?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.phoneNumber?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 256 }">
+                   This field cannot be longer than 256 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employeeContact.phoneNoExtension" for="field_phoneNoExtension">Phone No Extension</label>
+            <input type="text" class="form-control" name="phoneNoExtension" id="field_phoneNoExtension"
+                [(ngModel)]="employeeContact.phoneNoExtension" maxlength="128" />
+            <div [hidden]="!(editForm.controls.phoneNoExtension?.dirty && editForm.controls.phoneNoExtension?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.phoneNoExtension?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 128 }">
+                   This field cannot be longer than 128 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="s1App.employeeContact.activeDate" for="field_activeDate">Active Date</label>
+            <div class="input-group">
+                <input id="field_activeDate" type="text" class="form-control" name="activeDate" ngbDatepicker  #activeDateDp="ngbDatepicker" [(ngModel)]="employeeContact.activeDate"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="activeDateDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="s1App.employeeContact.employee" for="field_employee">Employee</label>
+            <select class="form-control" id="field_employee" name="employee" [(ngModel)]="employeeContact.employee" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="employeeOption.id === employeeContact.employee?.id ? employeeContact.employee : employeeOption" *ngFor="let employeeOption of employees; trackBy: trackEmployeeById">{{employeeOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

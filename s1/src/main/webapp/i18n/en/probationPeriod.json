@@ -1,0 +1,33 @@
+{
+    "s1App": {
+        "probationPeriod" : {
+            "home": {
+                "title": "Probation Periods",
+                "createLabel": "Create a new Probation Period",
+                "createOrEditLabel": "Create or edit a Probation Period",
+                "search": "Search for Probation Period"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Probation Period {{ id }}?"
+            },
+            "detail": {
+                "title": "Probation Period"
+            },
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code",
+            "periodStart": "Period Start",
+            "periodEnd": "Period End",
+            "evaluatePeriodStart": "Evaluate Period Start",
+            "evaluatePeriodEnd": "Evaluate Period End",
+            "probation": "Probation",
+            "employee": "Employee"
+        }
+    },
+    "hcmApp": {
+        "probationPeriod" : {
+            "created": "A new Probation Period is created with identifier {{ param }}",
+            "updated": "A Probation Period is updated with identifier {{ param }}",
+            "deleted": "A Probation Period is deleted with identifier {{ param }}"
+        }
+    }
+}

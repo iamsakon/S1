@@ -1,0 +1,33 @@
+{
+    "s1App": {
+        "employeeContact" : {
+            "home": {
+                "title": "Employee Contacts",
+                "createLabel": "Create a new Employee Contact",
+                "createOrEditLabel": "Create or edit a Employee Contact",
+                "search": "Search for Employee Contact"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Employee Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "Employee Contact"
+            },
+            "tenantId": "Tenant Id",
+            "companyCode": "Company Code",
+            "email": "Email",
+            "mobileNumber": "Mobile Number",
+            "phoneNumber": "Phone Number",
+            "phoneNoExtension": "Phone No Extension",
+            "activeDate": "Active Date",
+            "employee": "Employee"
+        }
+    },
+    "hcmApp": {
+        "employeeContact" : {
+            "created": "A new Employee Contact is created with identifier {{ param }}",
+            "updated": "A Employee Contact is updated with identifier {{ param }}",
+            "deleted": "A Employee Contact is deleted with identifier {{ param }}"
+        }
+    }
+}

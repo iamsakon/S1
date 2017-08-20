@@ -1,0 +1,33 @@
+
+<div *ngIf="probationDay">
+    <h2><span jhiTranslate="s1App.probationDay.detail.title">Probation Day</span> {{probationDay.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="s1App.probationDay.tenantId">Tenant Id</span></dt>
+        <dd>
+            <span>{{probationDay.tenantId}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.probationDay.companyCode">Company Code</span></dt>
+        <dd>
+            <span>{{probationDay.companyCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="s1App.probationDay.amountDate">Amount Date</span></dt>
+        <dd>
+            <span>{{probationDay.amountDate}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'probation-day/'+ probationDay.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

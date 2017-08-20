@@ -15,6 +15,10 @@
                 "maritalStatus": "Marital Status",
                 "militaryStatus": "Military Status",
                 "bloodType": "Blood Type",
+                "employee": "Employee",
+                "probationDay": "Probation Day",
+                "probationPeriod": "Probation Period",
+                "employeeContact": "Employee Contact",
                 "candidate": "Candidate",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },

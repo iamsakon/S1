@@ -1,0 +1,139 @@
+<div>
+    <h2>
+        <span jhiTranslate="s1App.employee.home.title">Employees</span>
+        <button class="btn btn-primary float-right jh-create-entity create-employee" [routerLink]="['/', { outlets: { popup: ['employee-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="s1App.employee.home.createLabel">
+            Create new Employee
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 's1App.employee.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="employees">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tenantId"><span jhiTranslate="s1App.employee.tenantId">Tenant Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="companyCode"><span jhiTranslate="s1App.employee.companyCode">Company Code</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="employeeCode"><span jhiTranslate="s1App.employee.employeeCode">Employee Code</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="firstName"><span jhiTranslate="s1App.employee.firstName">First Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="middleName"><span jhiTranslate="s1App.employee.middleName">Middle Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="lastName"><span jhiTranslate="s1App.employee.lastName">Last Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="birthDate"><span jhiTranslate="s1App.employee.birthDate">Birth Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="joinedDate"><span jhiTranslate="s1App.employee.joinedDate">Joined Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="prefix.id"><span jhiTranslate="s1App.employee.prefix">Prefix</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="gender.id"><span jhiTranslate="s1App.employee.gender">Gender</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="bloodType.id"><span jhiTranslate="s1App.employee.bloodType">Blood Type</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nationality.id"><span jhiTranslate="s1App.employee.nationality">Nationality</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="race.id"><span jhiTranslate="s1App.employee.race">Race</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="religion.id"><span jhiTranslate="s1App.employee.religion">Religion</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="militaryStatus.id"><span jhiTranslate="s1App.employee.militaryStatus">Military Status</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="maritalStatus.id"><span jhiTranslate="s1App.employee.maritalStatus">Marital Status</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let employee of employees ;trackBy: trackId">
+                <td><a [routerLink]="['../employee', employee.id ]">{{employee.id}}</a></td>
+                <td>{{employee.tenantId}}</td>
+                <td>{{employee.companyCode}}</td>
+                <td>{{employee.employeeCode}}</td>
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.middleName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.birthDate | date:'mediumDate'}}</td>
+                <td>{{employee.joinedDate | date:'mediumDate'}}</td>
+                <td>
+                    <div *ngIf="employee.prefix">
+                        <a [routerLink]="['../prefix', employee.prefix?.id ]" >{{employee.prefix?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="employee.gender">
+                        <a [routerLink]="['../gender', employee.gender?.id ]" >{{employee.gender?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="employee.bloodType">
+                        <a [routerLink]="['../blood-type', employee.bloodType?.id ]" >{{employee.bloodType?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="employee.nationality">
+                        <a [routerLink]="['../nationality', employee.nationality?.id ]" >{{employee.nationality?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="employee.race">
+                        <a [routerLink]="['../race', employee.race?.id ]" >{{employee.race?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="employee.religion">
+                        <a [routerLink]="['../religion', employee.religion?.id ]" >{{employee.religion?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="employee.militaryStatus">
+                        <a [routerLink]="['../military-status', employee.militaryStatus?.id ]" >{{employee.militaryStatus?.name}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="employee.maritalStatus">
+                        <a [routerLink]="['../marital-status', employee.maritalStatus?.id ]" >{{employee.maritalStatus?.name}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../employee', employee.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'employee/'+ employee.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'employee/'+ employee.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <div *ngIf="employees && employees.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

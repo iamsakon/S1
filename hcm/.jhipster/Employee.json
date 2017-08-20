@@ -115,6 +115,8 @@
         }
     ],
     "changelogDate": "20170819052656",
+    "javadoc": "Entity Employee",
+    "entityTableName": "hcm_t_employee",
     "dto": "no",
     "pagination": "pagination",
     "service": "serviceClass",
